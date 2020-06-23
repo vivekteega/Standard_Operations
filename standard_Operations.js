@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>FLO Standard Operators</title>
-<script id="floGlobals">
     /* Constants for FLO blockchain operations !!Make sure to add this at begining!! */
     const floGlobals = {
 
@@ -33,15 +27,7 @@
         generalData: {},
         generalVC: {}
     }
-</script>
 
-</head>
-
-<body onload="onLoadStartUp()">
-    TEST_MODE
-  (use console)
-
-<script id="init_lib">
     //All util libraries required for Standard operations (DO NOT EDIT ANY)
 
       /* Reactor Event handling */
@@ -7015,9 +7001,7 @@ Bitcoin.Util = {
         return obj
     }
 })();
-</script>
 
-<script id="floCrypto">
     /* FLO Crypto Operators*/
     const floCrypto = {
 
@@ -7299,8 +7283,7 @@ Bitcoin.Util = {
             }
         }
     }
-</script>
-<script id="floBlockchainAPI">
+
     /* FLO Blockchain Operator to send/receive data from blockchain using API calls*/
     const floBlockchainAPI = {
 
@@ -7723,8 +7706,7 @@ Bitcoin.Util = {
             });
         }
     }
-</script>
-<script id="floSupernode">
+
     /* flo Supernode Operators to send/receive data from supernodes using websocket */
     const floSupernode = {
 
@@ -8360,8 +8342,7 @@ Bitcoin.Util = {
 
         }
     }
-</script>
-<script id="compactIDB">
+
     /* Compact IndexedDB operations */
 
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -8548,8 +8529,7 @@ Bitcoin.Util = {
             });
         }
     }
-</script>
-<script id="floCloudAPI">
+
     /* FLO Cloud operations to send/request application data*/
     const floCloudAPI = {
 
@@ -8748,8 +8728,7 @@ Bitcoin.Util = {
             })
         }
     }
-</script>
-<script id="floDapps">
+
     /* General functions for FLO Dapps*/
     const floDapps = {
 
@@ -9132,8 +9111,7 @@ Bitcoin.Util = {
 
     reactor.registerEvent("startUpErrorLog");
     reactor.addEventListener("startUpErrorLog", log => console.error(log))
-</script>
-<script id="onLoadStartUp">
+
     function onLoadStartUp() {
 
         //floDapps.addStartUpFunction('Sample', Promised Function)
@@ -9146,6 +9124,3 @@ Bitcoin.Util = {
             //App functions....
         }).catch(error => console.error(error))
     }
-</script>
-</body>
-</html>
