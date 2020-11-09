@@ -7615,6 +7615,20 @@
             //Broadcast signed Tx in blockchain using API
             broadcastTx: function (signedTxHash) {
                 return new Promise(async (resolve, reject) => {
+
+                    // broadcast  to FLO C++ node through RanchiMall FLO api 
+                    let broadcast_response = await (await fetch(`https://ranchimallflo.duckdns.org/api/v1.0/broadcastTx/${signedTxHash}`)
+                        .catch(error => {
+                            console.log('Error:', error);
+                            //broadcast_transaction(raw_transaction_hash)
+                        })).json()
+
+                    if (broadcast_response.returncode == 0) {
+                        console.log('The accepted transaction hash(RMAPI) is : ' + broadcast_response['stdout'].trim())
+                        resolve(broadcast_response['stdout'].trim())
+                    }
+
+                    // Since it failed in ranchimallfloAPI, broadcast to multiple flosights
                     let flosight_url = ['https://flosight.duckdns.org', 'https://explorer.mediciland.com'],
                         url_index = 0,
                         broadcast_status = false,
